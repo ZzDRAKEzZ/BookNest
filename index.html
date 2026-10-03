@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookNest — Каталог книг</title>
+</head>
+
+<body>
+    <header>
+        <h1>BookNest</h1>
+
+        <nav aria-label="Основная навигация">
+            <ul>
+                <li><a href="index.html">Каталог</a></li>
+                <li><a href="book.html">Книга</a></li>
+                <li><a href="loan.html">Выдача книги</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section aria-labelledby="catalog-title">
+            <h2 id="catalog-title">Каталог книг</h2>
+
+            <form>
+                <fieldset>
+                    <legend>Фильтры каталога</legend>
+
+                    <div>
+                        <label for="search">Поиск по названию:</label>
+                        <input
+                            type="search"
+                            id="search"
+                            name="search"
+                            placeholder="Введите название книги"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="genre">Жанр:</label>
+                        <select id="genre" name="genre">
+                            <option value="">Все жанры</option>
+                            <option value="fantasy">Фэнтези</option>
+                            <option value="detective">Детектив</option>
+                            <option value="science-fiction">Фантастика</option>
+                            <option value="classic">Классика</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="sort">Сортировка:</label>
+                        <select id="sort" name="sort">
+                            <option value="title">По названию</option>
+                            <option value="author">По автору</option>
+                            <option value="year">По году</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <input
+                            type="checkbox"
+                            id="available"
+                            name="available"
+                        >
+                        <label for="available">Только доступные</label>
+                    </div>
+
+                    <button type="submit">Применить</button>
+                </fieldset>
+            </form>
+        </section>
+
+        <section aria-labelledby="books-title">
+            <h2 id="books-title">Список книг</h2>
+
+            <p>Найдено книг: <output>6</output></p>
+
+            <article>
+                <h3>
+                    <a href="book.html">Мастер и Маргарита</a>
+                </h3>
+
+                <p>Автор: Михаил Булгаков</p>
+                <p>Жанр: Классика</p>
+                <p>Год издания: <time datetime="1967">1967</time></p>
+                <p>Статус: Доступна</p>
+            </article>
+
+            <article>
+                <h3>
+                    <a href="book.html">Преступление и наказание</a>
+                </h3>
+
+                <p>Автор: Фёдор Достоевский</p>
+                <p>Жанр: Классика</p>
+                <p>Год издания: <time datetime="1866">1866</time></p>
+                <p>Статус: Выдана</p>
+            </article>
+
+            <article>
+                <h3>
+                    <a href="book.html">Гарри Поттер и философский камень</a>
+                </h3>
+
+                <p>Автор: Джоан Роулинг</p>
+                <p>Жанр: Фэнтези</p>
+                <p>Год издания: <time datetime="1997">1997</time></p>
+                <p>Статус: Доступна</p>
+            </article>
+
+            <article>
+                <h3>
+                    <a href="book.html">1984</a>
+                </h3>
+
+                <p>Автор: Джордж Оруэлл</p>
+                <p>Жанр: Фантастика</p>
+                <p>Год издания: <time datetime="1949">1949</time></p>
+                <p>Статус: Доступна</p>
+            </article>
+
+            <article>
+                <h3>
+                    <a href="book.html">Шерлок Холмс</a>
+                </h3>
+
+                <p>Автор: Артур Конан Дойл</p>
+                <p>Жанр: Детектив</p>
+                <p>Год издания: <time datetime="1887">1887</time></p>
+                <p>Статус: Выдана</p>
+            </article>
+
+            <article>
+                <h3>
+                    <a href="book.html">Война и мир</a>
+                </h3>
+
+                <p>Автор: Лев Толстой</p>
+                <p>Жанр: Классика</p>
+                <p>Год издания: <time datetime="1869">1869</time></p>
+                <p>Статус: Доступна</p>
+            </article>
+        </section>
+
+        <aside>
+            <h2>О BookNest</h2>
+            <p>
+                BookNest — университетский книжный клуб,
+                где можно находить книги и оформлять их выдачу.
+            </p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 BookNest</p>
+        <address>
+            Контакт: <a href="mailto:booknest@example.com">booknest@example.com</a>
+        </address>
+    </footer>
+</body>
+</html>

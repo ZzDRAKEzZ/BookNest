@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookNest — Карточка книги</title>
+</head>
+
+<body>
+    <header>
+        <h1>BookNest</h1>
+
+        <nav aria-label="Основная навигация">
+            <ul>
+                <li><a href="index.html">Каталог</a></li>
+                <li><a href="book.html">Книга</a></li>
+                <li><a href="loan.html">Выдача книги</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <nav aria-label="Хлебные крошки">
+            <ol>
+                <li><a href="index.html">Каталог</a></li>
+                <li>Карточка книги</li>
+            </ol>
+        </nav>
+
+        <article>
+            <header>
+                <h2>Мастер и Маргарита</h2>
+            </header>
+
+            <figure>
+                <img
+                    src="assets/images/master-i-margarita.jpg"
+                    alt="Обложка книги «Мастер и Маргарита»"
+                    width="300"
+                    height="450"
+                >
+                <figcaption>Обложка книги «Мастер и Маргарита»</figcaption>
+            </figure>
+
+            <section aria-labelledby="characteristics-title">
+                <h3 id="characteristics-title">Характеристики</h3>
+
+                <dl>
+                    <dt>Автор</dt>
+                    <dd>Михаил Булгаков</dd>
+
+                    <dt>Жанр</dt>
+                    <dd>Классика</dd>
+
+                    <dt>Год издания</dt>
+                    <dd><time datetime="1967">1967</time></dd>
+
+                    <dt>ISBN</dt>
+                    <dd>978-5-17-090123-4</dd>
+
+                    <dt>Количество страниц</dt>
+                    <dd>480</dd>
+
+                    <dt>Статус</dt>
+                    <dd>Доступна</dd>
+                </dl>
+            </section>
+
+            <section aria-labelledby="description-title">
+                <h3 id="description-title">Описание</h3>
+
+                <p>
+                    «Мастер и Маргарита» — роман Михаила Булгакова,
+                    сочетающий философские, фантастические и сатирические мотивы.
+                </p>
+            </section>
+
+            <section aria-labelledby="reviews-title">
+                <h3 id="reviews-title">Отзывы</h3>
+
+                <article>
+                    <h4>Иван Петров</h4>
+                    <p>Очень интересная книга с глубоким сюжетом.</p>
+                    <time datetime="2026-09-20">20 сентября 2026 года</time>
+                </article>
+
+                <article>
+                    <h4>Анна Сидорова</h4>
+                    <p>Понравилось сочетание философии и фантастики.</p>
+                    <time datetime="2026-09-25">25 сентября 2026 года</time>
+                </article>
+            </section>
+
+            <section aria-labelledby="review-form-title">
+                <h3 id="review-form-title">Оставить отзыв</h3>
+
+                <form>
+                    <fieldset>
+                        <legend>Новый отзыв</legend>
+
+                        <p>
+                            <label for="review-name">Ваше имя:</label>
+                            <input
+                                type="text"
+                                id="review-name"
+                                name="review-name"
+                                required
+                                minlength="2"
+                                maxlength="50"
+                            >
+                        </p>
+
+                        <p>
+                            <label for="rating">Оценка:</label>
+                            <input
+                                type="number"
+                                id="rating"
+                                name="rating"
+                                min="1"
+                                max="5"
+                                required
+                            >
+                        </p>
+
+                        <p>
+                            <label for="review-text">Отзыв:</label>
+                            <textarea
+                                id="review-text"
+                                name="review-text"
+                                rows="5"
+                                minlength="10"
+                                maxlength="500"
+                                required
+                            ></textarea>
+                        </p>
+
+                        <button type="submit">Отправить отзыв</button>
+                    </fieldset>
+                </form>
+            </section>
+        </article>
+
+        <aside>
+            <h2>Похожие книги</h2>
+
+            <ul>
+                <li><a href="book.html">Преступление и наказание</a></li>
+                <li><a href="book.html">Война и мир</a></li>
+                <li><a href="book.html">1984</a></li>
+            </ul>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 BookNest</p>
+        <address>
+            Контакт:
+            <a href="mailto:booknest@example.com">
+                booknest@example.com
+            </a>
+        </address>
+    </footer>
+</body>
+</html>

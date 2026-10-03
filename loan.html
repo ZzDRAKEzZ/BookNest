@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookNest — Выдача книги</title>
+</head>
+
+<body>
+    <header>
+        <h1>BookNest</h1>
+
+        <nav aria-label="Основная навигация">
+            <ul>
+                <li><a href="index.html">Каталог</a></li>
+                <li><a href="book.html">Книга</a></li>
+                <li><a href="loan.html">Выдача книги</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section aria-labelledby="loan-title">
+            <h2 id="loan-title">Форма выдачи книги</h2>
+
+            <form>
+                <fieldset>
+                    <legend>Данные для оформления выдачи</legend>
+
+                    <p>
+                        <label for="reader-name">ФИО читателя:</label>
+                        <input
+                            type="text"
+                            id="reader-name"
+                            name="reader-name"
+                            required
+                            minlength="3"
+                            maxlength="100"
+                            pattern="[А-Яа-яЁёA-Za-z\s-]+"
+                        >
+                    </p>
+
+                    <p>
+                        <label for="reader-email">Электронная почта:</label>
+                        <input
+                            type="email"
+                            id="reader-email"
+                            name="reader-email"
+                            required
+                        >
+                    </p>
+
+                    <p>
+                        <label for="book-select">Книга:</label>
+                        <select
+                            id="book-select"
+                            name="book-select"
+                            required
+                        >
+                            <option value="">Выберите книгу</option>
+                            <option value="master-margarita">
+                                Мастер и Маргарита
+                            </option>
+                            <option value="harry-potter">
+                                Гарри Поттер и философский камень
+                            </option>
+                            <option value="1984">
+                                1984
+                            </option>
+                            <option value="war-peace">
+                                Война и мир
+                            </option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="loan-date">Дата выдачи:</label>
+                        <input
+                            type="date"
+                            id="loan-date"
+                            name="loan-date"
+                            required
+                        >
+                    </p>
+
+                    <p>
+                        <label for="loan-days">Срок выдачи, дней:</label>
+                        <input
+                            type="number"
+                            id="loan-days"
+                            name="loan-days"
+                            min="1"
+                            max="30"
+                            required
+                        >
+                    </p>
+
+                    <p>
+                        <label for="comment">Комментарий:</label>
+                        <textarea
+                            id="comment"
+                            name="comment"
+                            rows="5"
+                            maxlength="500"
+                            placeholder="Дополнительная информация"
+                        ></textarea>
+                    </p>
+
+                    <p>
+                        <input
+                            type="checkbox"
+                            id="agreement"
+                            name="agreement"
+                            required
+                        >
+                        <label for="agreement">
+                            Я подтверждаю правильность указанных данных
+                        </label>
+                    </p>
+
+                    <button type="submit">Оформить выдачу</button>
+                    <button type="reset">Очистить форму</button>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 BookNest</p>
+
+        <address>
+            Контакт:
+            <a href="mailto:booknest@example.com">
+                booknest@example.com
+            </a>
+        </address>
+    </footer>
+</body>
+</html>
