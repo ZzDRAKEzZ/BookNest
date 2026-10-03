@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -25,9 +26,9 @@
 
             <form>
                 <fieldset>
-                    <legend>Фильтры каталога</legend>
+                    <form aria-label="Фильтрация каталога книг">
 
-                    <div>
+                    <p>
                         <label for="search">Поиск по названию:</label>
                         <input
                             type="search"
@@ -35,9 +36,9 @@
                             name="search"
                             placeholder="Введите название книги"
                         >
-                    </div>
+                    </p>
 
-                    <div>
+                    <p>
                         <label for="genre">Жанр:</label>
                         <select id="genre" name="genre">
                             <option value="">Все жанры</option>
@@ -46,25 +47,25 @@
                             <option value="science-fiction">Фантастика</option>
                             <option value="classic">Классика</option>
                         </select>
-                    </div>
+                    </p>
 
-                    <div>
+                    <p>
                         <label for="sort">Сортировка:</label>
                         <select id="sort" name="sort">
                             <option value="title">По названию</option>
                             <option value="author">По автору</option>
                             <option value="year">По году</option>
                         </select>
-                    </div>
+                    </p>
 
-                    <div>
+                    <p>
                         <input
                             type="checkbox"
                             id="available"
                             name="available"
                         >
                         <label for="available">Только доступные</label>
-                    </div>
+                    </p>
 
                     <button type="submit">Применить</button>
                 </fieldset>
@@ -160,3 +161,4 @@
     </footer>
 </body>
 </html>
+```

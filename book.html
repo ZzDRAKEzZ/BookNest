@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -8,7 +9,7 @@
 
 <body>
     <header>
-        <h1>BookNest</h1>
+        <p>BookNest</p>
 
         <nav aria-label="Основная навигация">
             <ul>
@@ -23,13 +24,13 @@
         <nav aria-label="Хлебные крошки">
             <ol>
                 <li><a href="index.html">Каталог</a></li>
-                <li>Карточка книги</li>
+                <li aria-current="page">Карточка книги</li>
             </ol>
         </nav>
 
         <article>
             <header>
-                <h2>Мастер и Маргарита</h2>
+                <h1>Мастер и Маргарита</h1>
             </header>
 
             <figure>
@@ -43,7 +44,7 @@
             </figure>
 
             <section aria-labelledby="characteristics-title">
-                <h3 id="characteristics-title">Характеристики</h3>
+                <h2 id="characteristics-title">Характеристики</h2>
 
                 <dl>
                     <dt>Автор</dt>
@@ -67,7 +68,7 @@
             </section>
 
             <section aria-labelledby="description-title">
-                <h3 id="description-title">Описание</h3>
+                <h2 id="description-title">Описание</h2>
 
                 <p>
                     «Мастер и Маргарита» — роман Михаила Булгакова,
@@ -76,23 +77,23 @@
             </section>
 
             <section aria-labelledby="reviews-title">
-                <h3 id="reviews-title">Отзывы</h3>
+                <h2 id="reviews-title">Отзывы</h2>
 
                 <article>
-                    <h4>Иван Петров</h4>
+                    <h3>Иван Петров</h3>
                     <p>Очень интересная книга с глубоким сюжетом.</p>
                     <time datetime="2026-09-20">20 сентября 2026 года</time>
                 </article>
 
                 <article>
-                    <h4>Анна Сидорова</h4>
+                    <h3>Анна Сидорова</h3>
                     <p>Понравилось сочетание философии и фантастики.</p>
                     <time datetime="2026-09-25">25 сентября 2026 года</time>
                 </article>
             </section>
 
             <section aria-labelledby="review-form-title">
-                <h3 id="review-form-title">Оставить отзыв</h3>
+                <h2 id="review-form-title">Оставить отзыв</h2>
 
                 <form>
                     <fieldset>
@@ -162,3 +163,4 @@
     </footer>
 </body>
 </html>
+```
