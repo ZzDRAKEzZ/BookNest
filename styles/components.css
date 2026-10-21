@@ -1,0 +1,202 @@
+
+form {
+  min-width: 0;
+}
+
+fieldset {
+  display: grid;
+  gap: var(--space-3);
+  min-width: 0;
+  margin: 0;
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  background: var(--color-surface);
+}
+
+fieldset p {
+  display: grid;
+  gap: var(--space-1);
+  margin: 0;
+}
+
+fieldset p:has(input[type="checkbox"]) {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  min-width: 0;
+  padding: var(--space-2) var(--space-3);
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+}
+
+input[type="checkbox"] {
+  width: auto;
+  min-width: 1rem;
+  min-height: 1rem;
+}
+
+button {
+  padding: var(--space-2) var(--space-4);
+  color: #ffffff;
+  background: var(--color-primary);
+  border: 0;
+  border-radius: var(--radius-small);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background: var(--color-primary-hover);
+}
+
+main > section:nth-of-type(2) > article {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  height: 100%;
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-card);
+}
+
+main > section:nth-of-type(2) > article h3 {
+  margin-bottom: var(--space-2);
+  font-size: var(--font-size-large);
+}
+
+main > section:nth-of-type(2) > article p {
+  margin-bottom: 0;
+  color: var(--color-text-muted);
+  overflow-wrap: anywhere;
+}
+
+main > aside {
+  padding: var(--space-4);
+  background: var(--color-accent);
+  border-radius: var(--radius-medium);
+}
+
+main > aside h2 {
+  margin-bottom: var(--space-2);
+}
+
+main > aside p {
+  margin-bottom: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #a8c2ff;
+    --color-primary-hover: #c5d5ff;
+    --color-background: #151922;
+    --color-surface: #202633;
+    --color-text: #edf1fa;
+    --color-text-muted: #bbc3d3;
+    --color-border: #3a4354;
+    --color-accent: #283650;
+    --color-success: #8bd6a8;
+    --color-danger: #ff9ba5;
+    --shadow-card: 0 4px 16px rgb(0 0 0 / 20%);
+    --shadow-focus: 0 0 0 3px rgb(168 194 255 / 30%);
+  }
+
+  button {
+    color: #151922;
+  }
+}
+
+/* Карточка книги */
+main > article {
+  min-width: 0;
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-card);
+}
+
+main > article > header {
+  width: 100%;
+  padding-block: var(--space-3);
+}
+
+main > article figure {
+  margin: 0 0 var(--space-5);
+}
+
+main > article figure img {
+  width: min(100%, 18rem);
+  height: auto;
+  border-radius: var(--radius-small);
+  object-fit: contain;
+}
+
+main > article figcaption {
+  margin-top: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+}
+
+main > article dl {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-2);
+}
+
+main > article dt {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+}
+
+main > article dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+main > article section {
+  margin-top: var(--space-5);
+}
+
+main > article section > article {
+  margin-top: var(--space-3);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+}
+
+main > article section > article h3 {
+  margin-bottom: var(--space-2);
+}
+
+main > article section > article p {
+  margin-bottom: var(--space-2);
+}
+
+main > aside ul {
+  padding-left: var(--space-5);
+}
+
+main > aside li {
+  margin-block: var(--space-2);
+}
+
+@media (min-width: 600px) {
+  main > article dl {
+    grid-template-columns: minmax(8rem, 1fr) minmax(0, 2fr);
+  }
+
+  main > article dt {
+    align-self: start;
+  }
+}

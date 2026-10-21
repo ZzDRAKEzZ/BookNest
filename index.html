@@ -1,147 +1,82 @@
-```html
+﻿
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BookNest — Каталог книг</title>
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <script type="module" src="main.js"></script>
 </head>
-
 <body>
     <header>
         <h1>BookNest</h1>
-
         <nav aria-label="Основная навигация">
             <ul>
-                <li><a href="index.html">Каталог</a></li>
+                <li><a href="index.html" aria-current="page">Каталог</a></li>
                 <li><a href="book.html">Книга</a></li>
                 <li><a href="loan.html">Выдача книги</a></li>
             </ul>
         </nav>
+        <p>Мой список: <output id="wishlist-count">0</output></p>
     </header>
 
     <main>
-        <section aria-labelledby="catalog-title">
-            <h2 id="catalog-title">Каталог книг</h2>
-
-            <form>
+        <section aria-labelledby="filters-title">
+            <h2 id="filters-title">Поиск и фильтры</h2>
+            <form id="filters-form">
                 <fieldset>
-                    <form aria-label="Фильтрация каталога книг">
-
+                    <legend>Настройки каталога</legend>
                     <p>
-                        <label for="search">Поиск по названию:</label>
-                        <input
-                            type="search"
-                            id="search"
-                            name="search"
-                            placeholder="Введите название книги"
-                        >
+                        <label for="search">Поиск по названию или автору</label>
+                        <input type="search" id="search" name="query"
+                               placeholder="Например, Булгаков">
                     </p>
-
                     <p>
-                        <label for="genre">Жанр:</label>
+                        <label for="genre">Жанр</label>
                         <select id="genre" name="genre">
                             <option value="">Все жанры</option>
-                            <option value="fantasy">Фэнтези</option>
-                            <option value="detective">Детектив</option>
-                            <option value="science-fiction">Фантастика</option>
-                            <option value="classic">Классика</option>
+                            <option value="Фантастика">Фантастика</option>
+                            <option value="Фэнтези">Фэнтези</option>
+                            <option value="Детектив">Детектив</option>
+                            <option value="Роман">Роман</option>
+                            <option value="Классика">Классика</option>
                         </select>
                     </p>
-
                     <p>
-                        <label for="sort">Сортировка:</label>
-                        <select id="sort" name="sort">
-                            <option value="title">По названию</option>
-                            <option value="author">По автору</option>
-                            <option value="year">По году</option>
+                        <label for="sort">Сортировка</label>
+                        <select id="sort" name="sortBy">
+                            <option value="title">По названию (А–Я)</option>
+                            <option value="year">Сначала новые</option>
+                            <option value="rating">По рейтингу</option>
                         </select>
                     </p>
-
                     <p>
-                        <input
-                            type="checkbox"
-                            id="available"
-                            name="available"
-                        >
+                        <input type="checkbox" id="available" name="availableOnly">
                         <label for="available">Только доступные</label>
                     </p>
-
-                    <button type="submit">Применить</button>
+                    <button type="submit">Применить фильтры</button>
+                    <button type="reset" id="reset-filters">Сбросить</button>
                 </fieldset>
             </form>
         </section>
 
         <section aria-labelledby="books-title">
-            <h2 id="books-title">Список книг</h2>
+            <h2 id="books-title">Каталог книг</h2>
+            <p id="results-count" aria-live="polite">Загрузка книг…</p>
+            <p id="empty-state" hidden>
+                Книги не найдены. Измени запрос или сбрось фильтры.
+            </p>
+            <div id="books-list" class="books-grid"></div>
+        </section>
 
-            <p>Найдено книг: <output>6</output></p>
-
-            <article>
-                <h3>
-                    <a href="book.html">Мастер и Маргарита</a>
-                </h3>
-
-                <p>Автор: Михаил Булгаков</p>
-                <p>Жанр: Классика</p>
-                <p>Год издания: <time datetime="1967">1967</time></p>
-                <p>Статус: Доступна</p>
-            </article>
-
-            <article>
-                <h3>
-                    <a href="book.html">Преступление и наказание</a>
-                </h3>
-
-                <p>Автор: Фёдор Достоевский</p>
-                <p>Жанр: Классика</p>
-                <p>Год издания: <time datetime="1866">1866</time></p>
-                <p>Статус: Выдана</p>
-            </article>
-
-            <article>
-                <h3>
-                    <a href="book.html">Гарри Поттер и философский камень</a>
-                </h3>
-
-                <p>Автор: Джоан Роулинг</p>
-                <p>Жанр: Фэнтези</p>
-                <p>Год издания: <time datetime="1997">1997</time></p>
-                <p>Статус: Доступна</p>
-            </article>
-
-            <article>
-                <h3>
-                    <a href="book.html">1984</a>
-                </h3>
-
-                <p>Автор: Джордж Оруэлл</p>
-                <p>Жанр: Фантастика</p>
-                <p>Год издания: <time datetime="1949">1949</time></p>
-                <p>Статус: Доступна</p>
-            </article>
-
-            <article>
-                <h3>
-                    <a href="book.html">Шерлок Холмс</a>
-                </h3>
-
-                <p>Автор: Артур Конан Дойл</p>
-                <p>Жанр: Детектив</p>
-                <p>Год издания: <time datetime="1887">1887</time></p>
-                <p>Статус: Выдана</p>
-            </article>
-
-            <article>
-                <h3>
-                    <a href="book.html">Война и мир</a>
-                </h3>
-
-                <p>Автор: Лев Толстой</p>
-                <p>Жанр: Классика</p>
-                <p>Год издания: <time datetime="1869">1869</time></p>
-                <p>Статус: Доступна</p>
-            </article>
+        <section aria-labelledby="wishlist-title">
+            <h2 id="wishlist-title">Мой список</h2>
+            <p id="wishlist-empty">Ты пока не добавил книги в список.</p>
+            <ul id="wishlist-list"></ul>
         </section>
 
         <aside>
@@ -161,4 +96,3 @@
     </footer>
 </body>
 </html>
-```
